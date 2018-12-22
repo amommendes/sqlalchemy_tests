@@ -20,5 +20,10 @@ class Endereco(Base):
     id = Column(Integer, primary_key=True)
     nome_rua = Column(String(250))
     numero = Column(String(250))
+    #cep = Column(String(9))
     pessoa_id = Column(Integer, ForeignKey('pessoa.id'))
     pessoa = relationship(Pessoa)
+
+if __name__ == "__main__":
+    print(Pessoa.__mapper__)
+    print(Pessoa.__table__)
