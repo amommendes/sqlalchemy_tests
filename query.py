@@ -9,7 +9,7 @@ DBSession = sessionmaker(bind=engine)
 # This is the session itself
 session = DBSession()
 
-pessoa = session.query(Pessoa).first()
-print("First database person: %s" % (pessoa.nome))
-endero_da_primeira_pessoa = session.query(Endereco).filter(Endereco.pessoa == pessoa).one()
-print("Adress from the first database person: %s" % (endero_da_primeira_pessoa.nome_rua))
+person = session.query(Pessoa).first()
+print("First database person: %s" % (person.nome))
+adress_from_first_person = session.query(Endereco).filter(Endereco.pessoa == pessoa).one()
+print("Adress from the first database person: %s" % (adress_from_first_person.nome_rua))
